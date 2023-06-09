@@ -1,0 +1,36 @@
+{% extends "LiveApp/base.html" %}
+{% load static %}
+
+{% block title %}
+Event’Immediat | Mon profil
+{% endblock %}
+{% block content %}
+<div class="back">
+    <a href="{% url 'LiveApp:home' %}">
+      <span class="material-symbols-outlined">
+          arrow_back
+      </span>
+  
+      Accueil
+    </a>  
+    <p class="buttons">
+        <a class="button is-dark is-small" href="{% url "LiveApp:edit_profile" %}">Éditer mon profil</a> 
+        <a class="button is-dark is-small" href="{% url "LiveApp:edit_password" %}">Changer mon mot de passe</a>
+    </p>
+  </div>
+<div class="form">
+    <h2>Mon profil</h2>
+    <div class="container"> 
+        <img src="{% static 'media/usericon.svg' %}" class="img-user" />
+        <span>
+            <h3>{{ user.username }}</h3>
+            <p class="name"> {{ user.first_name}} {{ user.last_name }}</p>
+            <p> {{ user.email }}</p>
+            <p> Inscription : <strong>{{ user.date_joined }}</strong></p>
+            <p> Dernière connexion : <strong>{{ user.last_login }}</strong></p>
+        </span>
+    </div>
+    
+    
+</div>
+{% endblock %}

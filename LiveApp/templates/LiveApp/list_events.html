@@ -1,0 +1,63 @@
+{% extends "LiveApp/base.html" %}
+{% load static %}
+
+{% block title %}
+Event’Immediat | Tous nos événements
+{% endblock %}
+{% block content %}
+<div class="back">
+  <a href="{% url 'LiveApp:home' %}">
+    <span class="material-symbols-outlined">
+        arrow_back
+    </span>
+
+    Accueil
+  </a>
+
+  {% if user.id %}
+    <a class="button is-dark is-small" href="{% url "LiveApp:create_event" %}">Créer un événement</a>
+  {% endif %}
+</div>
+  <div class="cards">
+  {% for event in page %}
+    <div class="card">
+      <div class="img-card" style='background-image: url("{% static 'media/' %}{{ event.image }}")'></div>
+      <div class="card-content">
+        <div class="card-title">
+          {{ event.title }}
+        </div>
+        <div class="card-date">le {{ event.date }}
+        </div>
+        <div class="card-description">
+          {{event.description}}
+        </div>
+      </div>
+
+      <footer class="card-footer has-background-white-bis">
+        <a 
+          href="{% url "LiveApp:detail_event" event.id %}" 
+          class="card-footer-item p-5 has-text-grey is-uppercase is-text-wide-1">En découvrir plus</a>
+      </footer>
+    </div>
+  
+  {% endfor %}
+  </div>
+  <div class="pagination">
+    <div>
+      {% if page.has_previous %}
+      <a href="?page={{ page.previous_page_number }}">Précédent</a>
+      {% endif %}
+    </div>
+
+
+    <span class="current-page">Page {{ page.number }}</span>
+
+    <div>
+      {% if page.has_next %}
+      <a href="?page={{ page.next_page_number }}">Suivant</a>
+      {% endif %}
+    </div>
+
+  </div>
+  
+{% endblock %}

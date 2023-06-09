@@ -1,0 +1,24 @@
+{% extends "LiveApp/base.html" %}
+{% load static %}
+
+{% block title %}
+Event’Immediat | Éditer mon profil
+{% endblock %}
+{% block content %}
+<div class="back">
+  <a href="{% url "LiveApp:profile" %}">
+    <span class="material-symbols-outlined">
+      arrow_back
+    </span>
+
+    Retourner au profil
+  </a>
+</div>
+<form method="post">
+  <h2>Modifier mon profil</h2>
+  {% csrf_token %}
+  <p>{{ form.username.label_tag }} {{ form.username }}</p>
+  <p>{{ form.email.label_tag }} {{ form.email }}</p>
+  <button type="submit">Enregistrer les modifications</button>
+</form>
+{% endblock %}

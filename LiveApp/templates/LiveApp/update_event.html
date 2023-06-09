@@ -1,0 +1,22 @@
+{% extends "LiveApp/base.html" %}
+{% block title %}
+Event’Immediat | modifier un événement
+{% endblock %}
+{% block content %}
+<div class="back">
+    <a href="{% url "LiveApp:detail_event" event.id  %}">
+      <span class="material-symbols-outlined">
+          arrow_back
+      </span>
+  
+      Retourner à l'événement
+    </a>
+</div>
+<form method="post" enctype="multipart/form-data">
+    <h2>Modifier l'événement <br/><strong>{{event.title}}</strong></h2>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer</button>
+</form>
+
+{% endblock %}

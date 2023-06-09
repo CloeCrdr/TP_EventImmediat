@@ -1,0 +1,68 @@
+{% extends "LiveApp/base.html" %}
+{% load static %}
+
+{% block title %}
+Event’Immediat
+{% endblock %}
+{% block content %}
+<div class="back">
+    <a href="{% url 'LiveApp:events_list' %}">
+        <span class="material-symbols-outlined">
+            arrow_back
+        </span>
+
+        Tous les événements
+    </a>
+    <p>
+        {% if user.is_staff or user.is_superuser %}
+        <a class="button is-dark is-small" href="{% url "LiveApp:update_event" event.id %}">Modifier l'événement</a>
+        <a class="button is-dark is-small delete-event-btn" data-event-id="{{ event.id }}">Supprimer l'événement</a>
+        {% endif %}
+    </p>
+</div>
+   <div class="event-hero">
+        <div class="event-hero-background" style="background-image: url('{% static 'media/' %}{{ event.image }}')"></div>
+        
+        <h2>
+            {{ event.title }}
+            <div>
+                le {{ event.date }}
+            </div>
+        </h2>
+    </div>
+    <div class="event-content">
+        <div class="event-content-text">
+            <p class="place">
+                <strong><span class="material-symbols-outlined">
+                    pin_drop
+                </span> {{ event.place }}</strong> 
+            </p>
+            <p class="organizer">
+                Organisateur : <strong>{{ event.organizer }}</strong>
+                
+            </p>
+            <p>
+                {{ event.description }}
+            </p>
+            
+        </div>
+        <div class="event-content-subscribers">
+            {% if user_in_event %}
+                <a class="button is-dark is-small" id="desinscription-button" data-event-id="{{ event.id }}">Se désinscrire de l'événement</a>
+            {% else %}
+                <a class="button is-dark is-small" id="inscription-button" data-event-id="{{ event.id }}">S'inscrire à l'événement</a>
+            {% endif %}
+            <br/>
+            {% if users%}
+                {% for user_event in users %}
+                    {{ user_event.user.first_name }} {{ user_event.user.last_name }} {% if user.is_staff or user.is_superuser %}- <a href="mailto:{{ user_event.user.email }}">{{ user_event.user.email }}</a>{% endif %}
+                {% endfor %}
+            {% else %}
+                Il n'y a aucun participant à cet événement
+            {% endif %}
+        </div>
+        
+    </div>
+    
+
+{% endblock %}

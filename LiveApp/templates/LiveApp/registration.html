@@ -1,0 +1,12 @@
+{% extends "LiveApp/base.html" %}
+{% block title %}
+Event’Immediat | inscription
+{% endblock %}
+{% block content %}
+
+<form method="post">
+    <h2>Inscription</h2>
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">S'inscrire</button>
+</form>
+{% endblock %}

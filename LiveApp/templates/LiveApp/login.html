@@ -1,0 +1,14 @@
+{% extends "LiveApp/base.html" %}
+{% block title %}
+Event’Immediat | connexion
+{% endblock %}
+{% block content %}
+
+<form method="post">
+    <h2>Connexion</h2>
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Se connecter</button>
+
+    <p><a href="{% url 'LiveApp:password_reset' %}">Mot de passe oublié ?</a></p>
+</form>
+{% endblock %}

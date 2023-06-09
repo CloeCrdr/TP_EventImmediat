@@ -1,0 +1,16 @@
+{% extends "LiveApp/base.html" %}
+{% block title %}
+Event’Immediat | connexion
+{% endblock %}
+{% block content %}
+
+<div class="form">
+    <h2>Vous êtes déconnecté(e).</h2>
+
+    <p class="txt_center">
+        <a href="{% url 'LiveApp:home' %}">Retour à l'accueil</a>
+    </p>
+</div>
+
+
+{% endblock %}

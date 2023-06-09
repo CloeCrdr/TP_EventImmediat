@@ -1,0 +1,376 @@
+body {
+    background: linear-gradient(90deg, #242430, #242430);
+    /*background-image: url('https://images.squarespace-cdn.com/content/v1/57053e3059827e7cad776789/1484334604007-99JVTH7Q4TQ8HKJZZLAT/9+Professional+photography+music+event+photographer.jpg');*/
+    background-attachment: fixed;
+    min-height: 100vh;
+    height: 100%;
+    overflow: auto;
+}
+
+body a {
+    color: #55aed8;
+}
+
+main {
+    min-height: 85vh;
+}
+
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1%;
+}
+
+/* Navbar specifications */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+a.navbar-item:hover {
+    color: #342653;
+}
+
+/* Navigation (back button */
+
+div.back {
+    display: flex;
+    margin: 1%;
+    justify-content: space-between
+}
+
+div.back span {
+    vertical-align: top;
+}
+
+/* change primary bulma's background */
+
+.is-primary {
+    background-color: #342653 !important;
+}
+
+/* hero on homepage */
+.hero {
+    background-image: url('https://cutewallpaper.org/34/edge-of-entertainment-hd-wallpaper/1932414914.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    height: 400px;
+    margin-top: .1rem;
+    position: relative;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6a3876;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.cta-button:hover {
+    background-color: #44244c;
+    color: white;
+}
+
+/* cards flex */
+.cards {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+
+}
+
+/* card events */
+.card {
+    width: 20% !important;
+    min-width: 195px;
+    margin: 2%;
+    height: 20rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: rgb(204, 204, 204);
+}
+
+.img-card {
+    filter: brightness(0.3) blur(0.8px);
+    height: 20rem;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: 50%;
+    z-index: 0;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-date {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.card-description {
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    hyphens: auto;
+    height: 6rem;
+    margin-top: 0.8rem;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+/* display simple event */
+.event-hero {
+    width: 50%;
+    height: 50%;
+    min-height: 400px;
+    max-width: 1250px;
+    min-height: 200px;
+    max-height: 450px;
+    position: relative;
+
+    margin: 2rem auto;
+}
+
+.event-hero-background {
+    min-height: 400px;
+    max-width: 1250px;
+    max-height: 450px;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 10px;
+    filter: brightness(0.2) blur(0.8px);
+    transition: 1s;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.event-content {
+    width: 50%;
+    min-height: 200px;
+    max-width: 1250px;
+    max-height: 450px;
+    background-color: rgba(195, 195, 195, 0.675);
+    border-radius: 10px;
+    margin: auto;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.event-content-text {
+    width: 60%;
+}
+
+.place strong {
+    background-color: #164d9a;
+    color: white;
+    padding: 3px 8px 3px 8px;
+}
+
+.place strong span {
+    font-size: 0.7rem;
+}
+
+.organizer strong {
+    color: #164d9a;
+}
+
+.event-content-subscribers {
+    width: 35%;
+    padding: 2%;
+}
+.event-content-subscribers a {
+    color: #164d9a;
+    text-decoration: none;
+}
+
+.event-hero-background:hover {
+    filter: brightness(0.5) blur(0.4px);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.event-hero h2 {
+    position: absolute;
+    bottom: 0.5rem;
+    color: white;
+    padding: 5rem;
+    font-size: 1.3rem;
+}
+
+/* add pagination to list of articles */
+.pagination {
+    margin: auto;
+    max-width: 275px;
+}
+
+/* cards for last members subscribing an event */
+.cards h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(204, 204, 204);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-user {
+    padding: 20px;
+    border-radius: 5px;
+    margin: 1%;
+    width: 30%;
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-user {
+    width: 50px;
+    height: 50px;
+    fill: #7373ab;
+    stroke: #7373ab;
+    stroke-width: 2px;
+}
+
+.card-user h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #212a4f;
+}
+
+/* layout for forms and elements without specific design */
+form,
+.form {
+    width: 50%;
+    margin: 1% auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: rgba(195, 195, 195, 0.675)
+}
+
+form input:not([type="checkbox"]),
+form textarea,
+form select {
+    display: block;
+    margin: auto;
+    margin-bottom: 3%;
+    width: 100%;
+    padding: 5px;
+}
+
+form p,
+form ul {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+form label {
+    background-color: #164d9a;
+    color: white;
+    padding: 3px 8px 3px 8px;
+    font-weight: strong;
+    margin: 1% 1% 1% 0;
+    display: inline-block;
+}
+
+form h2,
+.form h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: rgb(204, 204, 204)
+}
+
+form button {
+    display: block;
+    margin: auto;
+    background-color: #342653;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 15px 20px 15px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* layout for profiles */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .img-user {
+    width: 200px;
+    height: 200px;
+    fill: pink
+}
+
+.container span h3 {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: #4b3b62;
+}
+
+.container span {
+    display: block;
+    width: 50%;
+    margin: 5%;
+}
+
+.container p.name {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.container strong {
+    color: #c7bae9;
+}
+
+
+p.txt_center {
+    text-align: center!important;
+    margin: 1rem;
+}

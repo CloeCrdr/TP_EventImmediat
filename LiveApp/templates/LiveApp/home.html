@@ -1,0 +1,67 @@
+{% extends "LiveApp/base.html" %}
+{% load static %}
+
+{% block title %}
+Event’Immediat
+{% endblock %}
+{% block content %}
+  <section>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Bienvenue sur Event’Immediat</h1>
+        <p>Découvrez tous les événements à venir, prévus en France.</p>
+        <a class="cta-button" href="{% url 'LiveApp:events_list' %}">Voir nos événements</a>
+      </div>
+    </div>    
+  </section>
+  <section> 
+    <div class="cards">
+      <h2>Les dernières inscriptions</h2>
+      {% for member in latest_users %}
+        <div class="card-user p-5 has-text-grey has-background-light is-text-wide-1">
+          <div>
+            <h3>{{member.user.first_name}} {{member.user.last_name}}</h3>
+            <em>{{member.event.title}}</em>
+            <br/>
+            inscription le {{member.registration_date}}
+          </div>
+          <img src="{% static 'media/usericon.svg' %}" class="img-user"/>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="cards">
+      <h2>Nos prochains événements
+        <a href="{% url 'LiveApp:events_list' %}" class="">Voir tout</a>
+      </h2>
+    {% for event in events %}
+      <div class="card">
+        <div class="img-card" style='background-image: url("{% static 'media/' %}{{ event.image }}")'></div>
+        <div class="card-content">
+          <div class="card-title">
+            {{ event.title }}
+          </div>
+          <div class="card-date">le {{ event.date }}
+          </div>
+          <div class="card-description">
+            {{event.description}}
+          </div>
+        </div>
+  
+        <footer class="card-footer has-background-white-bis">
+          <a 
+            href="{% url "LiveApp:detail_event" event.id %}" 
+            class="card-footer-item p-5 has-text-grey is-uppercase is-text-wide-1">En découvrir plus</a>
+        </footer>
+      </div>
+    
+    {% endfor %}
+    </div>
+    
+
+  </section>
+  
+  <section>
+
+  </section>
+{% endblock %}
