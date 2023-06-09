@@ -2,7 +2,7 @@
 
 ## Requirements
 
-### Install the project 
+### Create the project 
 
 #### Create the folder
 django-admin startproject tp_EventImmediat
@@ -11,6 +11,8 @@ cd tp_EventImmediat
 
 #### Create Live Environment
 python3 -m venv LiveEnv 
+
+### Install and activate the project 
 #### Activate environment
 source LiveEnv/bin/activate  
 
@@ -18,8 +20,9 @@ source LiveEnv/bin/activate
 pip install django     
 pip install --upgrade pip  
 
-#### start app
+#### create live app
 python manage.py startapp LiveApp 
+
 #### run server
 python3 manage.py runserver
 
@@ -28,7 +31,6 @@ pip install mysql-connector-python
 
 #### install pillow (for image uploads)
 python -m pip install Pillow
-
 
 LiveEnv/lib/python3.11/site-packages/django/conf/global_settings.py has been modified on lines 527 and 539 to change path for login and profile :
 
@@ -46,7 +48,9 @@ In order to set the database credentials, please, go to tp_EventImmediat/setting
 'HOST': 'localhost',
 'PORT': '8889',
 
-If you use the provided MySQL database, you can use this accounts : 
+Then you shall create in your phpMyAdmin a "event_immediat" database.
+
+If you use the provided MySQL database, you need to import the SQL database privided in your phpMyAdmin. Then, you can use this accounts : 
 
 - Account admin : 
 <USERNAME> : Admin
@@ -62,9 +66,7 @@ If you don't, please do the migrations of the models :
 
 And create your user or superuser.
 
-
-
-## Specifities
+## Specificities
 ### Access rights
 - a non logged user can see home page and list of events but cannot see an event details
 - a non logged user can logged themselves or register
